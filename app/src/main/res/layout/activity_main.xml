@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/img_avatar"
+        android:layout_width="@dimen/_83sdp"
+        android:layout_height="@dimen/_83sdp"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_57sdp"
+        app:srcCompat="@drawable/avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:roundedCornerRadius="@dimen/_8sdp"
+        app:roundingBorderColor="#8B9A47"
+        app:roundingBorderWidth="@dimen/_2sdp" />
+
+    <ImageView
+        android:id="@+id/img_edit"
+        android:layout_width="@dimen/_17sdp"
+        android:layout_height="@dimen/_17sdp"
+        android:layout_marginEnd="@dimen/_28sdp"
+        android:src="@drawable/ic_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/img_avatar" />
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_36sdp"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Math - MD31"
+        android:textColor="#3A3F47"
+        android:textSize="@dimen/_24sdp"
+        app:layout_constraintEnd_toStartOf="@id/img_edit"
+        app:layout_constraintStart_toEndOf="@id/img_avatar"
+        app:layout_constraintTop_toTopOf="@id/img_avatar" />
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_18sdp"
+        android:text="MATHMD31"
+        app:layout_constraintTop_toBottomOf="@id/txt_name"
+        app:layout_constraintStart_toStartOf="@id/txt_name"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:textColor="#3A3F47"
+        android:textSize="@dimen/_12sdp"/>
+
+    <ImageView
+        android:layout_width="@dimen/_10sdp"
+        android:layout_height="@dimen/_12sdp"
+        android:src="@drawable/ic_coppy"
+        app:layout_constraintStart_toEndOf="@id/txt_title"
+        app:layout_constraintTop_toTopOf="@id/txt_title"
+        app:layout_constraintBottom_toBottomOf="@id/txt_title"
+        android:layout_marginStart="@dimen/_8sdp"/>
+
+    <TextView
+        android:id="@+id/txt_class_des"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_21sdp"
+        android:text="Class Description"
+        android:textColor="#3A3F47"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintTop_toBottomOf="@id/img_avatar"
+        app:layout_constraintStart_toStartOf="@id/img_avatar"
+        app:layout_constraintEnd_toEndOf="@id/img_edit"
+        android:layout_marginTop="@dimen/_24sdp"/>
+
+    <TextView
+        android:id="@+id/txt_description"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_72sdp"
+        android:text="@string/description"
+        app:layout_constraintTop_toBottomOf="@id/txt_class_des"
+        app:layout_constraintStart_toStartOf="@id/txt_class_des"
+        app:layout_constraintEnd_toEndOf="@id/txt_class_des"
+        android:layout_marginTop="@dimen/_8sdp"/>
+
+    <FrameLayout
+        android:id="@+id/appBarDocFragV2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:clipToPadding="false"
+        android:layout_marginHorizontal="@dimen/_14sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_description">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_main"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            app:tabIndicatorColor="#8B9A47"
+            style="@style/MyCustomTabLayout"
+            app:tabMode="fixed"
+            app:tabRippleColor="@null"
+            app:tabSelectedTextColor="@color/black"
+            app:tabTextColor="@color/black" />
+
+    </FrameLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_marginTop="@dimen/_20sdp"
+        android:id="@+id/vp_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarDocFragV2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
